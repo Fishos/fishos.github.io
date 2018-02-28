@@ -125,6 +125,14 @@ function initialize() {
 
   marker.setMap(map);
 }
+var myKey = "AIzaSyDS0R2FFvLg9y3a3OZvlCgili2PEklaymo";
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "https://maps.googleapis.com/maps/api/js?key=" + myKey + "&sensor=false&callback=initialize";
+            document.body.appendChild(script);
+        }
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -147,4 +155,3 @@ function myFunction() {
     navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
   }
 }
-
