@@ -125,6 +125,11 @@ function initialize() {
 
   marker.setMap(map);
 }
+
+ var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+        }
+
 var myKey = "AIzaSyDS0R2FFvLg9y3a3OZvlCgili2PEklaymo";
         function loadScript() {
             var script = document.createElement('script');
