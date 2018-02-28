@@ -147,3 +147,4 @@ function myFunction() {
     navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
   }
 }
+
