@@ -1,0 +1,522 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import "compass";
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Lobster+Two:400,700);
+
+$main-color: #2d3e50;
+$hexagon-icon-large-width: 64px;
+$hexagon-icon-large-height: 36px;
+$hexagon-icon-large-font: 32px;
+$hexagon-icon-small-width: 44px;
+$hexagon-icon-small-height: 26px;
+$hexagon-icon-small-font: 26px;
+
+@mixin hexagon-icon($hexagon-color, $fill: false, $icon-color: $main-color, $size: ''){
+      $hexagon-width: 56px;
+      $hexagon-height: 32px;
+      $hexagon-font: 32px;
+      $hexagon-border: 2px;
+
+      $hexagon: '.hexagon-icon';
+
+      @if $fill{
+        $hexagon: '.hexagon-icon-fill';
+      } @else{
+        $icon-color: $hexagon-color;
+      }
+      @if $size == 'small'{
+        $hexagon: $hexagon+'-#{$size}';
+        $hexagon-width: 38px;
+        $hexagon-height: 22px;
+        $hexagon-font: 22px;
+        $hexagon-border: 1px;
+      }
+
+      #{$hexagon},
+      #{$hexagon}:before,
+      #{$hexagon}:after{
+        border-style: solid;
+        border-color: $hexagon-color;
+        border-width: $hexagon-border;
+        width: $hexagon-width;
+        height: $hexagon-height;
+
+        @if $fill{
+          background: $hexagon-color;
+        }
+        border-top: none;
+        border-bottom: none;
+      }
+.retrato{
+  width: 95px;
+  height: 135px;
+  margin-left: 15px;
+  margin-top: 6px;
+  }
+      #{$hexagon}{
+        text-align: center;
+        line-height: $hexagon-height;
+        position:relative;
+        z-index:0;
+        &:before, &:after{
+          content: "";
+          position: absolute;
+          top:0;
+          left: -($hexagon-border);
+          z-index: -1;
+        }
+        &:before{
+          @include transform(rotate(60deg));
+        }
+        &:after{
+          @include transform(rotate(-60deg));
+        }
+        .fa{
+          color: $icon-color;
+          font-size: $hexagon-font;
+          line-height: $hexagon-height;
+        }
+      }
+    }
+
+html, body{
+  font-size: 14px;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+
+  h1, h2, h3, h4, h5, h6{
+
+        font-family: 'Open Sans', sans-serif;
+  }
+
+  main{
+    & > section{
+      padding: 52px 22px;
+    }
+
+    .icon-title{
+      font-size:0;
+      fa, h3, div{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      h3{
+        text-transform: uppercase;
+        margin-left: 12px;
+        font-weight: bold;
+      }
+    }
+
+    .info-content{
+      padding: 0 ($hexagon-icon-large-width/2);
+      margin-top: 30px;
+      margin-bottom: 30px;
+      p{
+        font-size: 14px;
+        text-align: justify;
+        color: inherit;
+      }
+      ul{
+        list-style-type: none;
+        &.list-icons{
+          list-style: none;
+          margin: 0;
+          li{
+            margin: 30px 0;
+            &:first-child{
+              padding-top: 10px;
+            }
+            &:last-child{
+              padding-bottom: 10px;
+            }
+          }
+        }
+        li{
+          div, p{
+            display:inline-block;
+            vertical-align: middle;
+          }
+          p{
+            margin: 0;
+            margin-left:12px;
+          }
+        }
+      }
+    }
+
+    #left-side{
+      background: lighten($main-color, 10%);
+
+      .name, .job-titles{
+        color: white;
+        text-align: center;
+      }
+
+      .name{
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .profilep{
+        font-size: 16px;
+        text-align: justify;
+        text-justify: auto;
+      }
+      .job-titles{
+        margin-bottom: 60px;
+      }
+      //Imagen hexagonal
+      .hexagon-container{
+        position: relative;
+        bottom: 30px;
+        height: 140px;
+        margin-bottom: 10px;
+          .hexagon {
+            position: absolute;
+            overflow: hidden;
+            width: 140px;
+            height: 140px;
+            right: 0;
+            left: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0 auto;
+            @include transform(rotate(-30deg) skewX(30deg) scaleY(.866));
+            backface-visibility: hidden;
+            .inner {
+              position: absolute;
+              right: 6.7%;
+              bottom: 0;
+              left: 6.7%;
+              top: 0;
+              @include transform(scaleY(1.155) skewX(-30deg) rotate(30deg));
+            }
+            &.hexagon-image{
+              z-index: 3;
+              @include transform(rotate(-30deg) skewX(30deg) scaleY(.866) translate(-4px, 4px));
+              .inner{
+                background: url(https://73d9135319eafc701a71e272ac40cd1505e6bbb9-www.googledrive.com/host/0B3VxOPeHfwbmeUNYaUVocTRvZ3M);
+                background-size: 120%;
+                background-position: top left;
+                background-repeat: no-repeat;
+              }
+            }
+            &.hexagon-background{
+              width: 144px;
+              height: 144px;
+              z-index: 2;
+              @include transform(rotate(-30deg) skewX(30deg) scaleY(.866) translate(-2px, 2px));
+              .inner{
+                background-color: #FFFFFF;
+              }
+            }
+            &.hexagon-background-dark{
+              width: 148px;
+              height: 148px;
+              .inner{
+                background-color: $main-color;
+              }
+            }
+         }
+      }
+
+      .icon-title{
+        fa, h3, div{
+          color: white;
+        }
+      }
+
+
+      .info-content{
+        color: #fff;
+        ul{
+          &.list-skills{
+            li{
+
+              font-size: 16px;
+              text-transform: uppercase;
+              list-style-type: none;
+              margin-top: 20px;
+              margin-bottom: 0px;
+            }
+          }
+          li{
+            a{
+              color: white;
+            }
+          }
+        }
+      }
+
+      //Iconos grandes
+      @include hexagon-icon($hexagon-color: #fff);
+      //Iconos pequeños
+      @include hexagon-icon($hexagon-color: #fff, $fill: true, $size: 'small');
+
+    }
+    #right-side{
+      padding-top: 70px;
+      padding-bottom: 0;
+      .icon-title{
+        fa, h3, div{
+          color: $main-color;
+        }
+      }
+      .info-content{
+        color: $main-color;
+        ul{
+
+          &.list-experience, &.list-experience1{
+
+            li{
+              margin: 10px 5px;
+
+
+            }
+            label {
+              font-size: 16px;
+              color: $main-color;
+              font-weight: bold;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+
+
+              &:before {
+               font-family: 'FontAwesome';
+    content: '\f105';
+    margin:0 5px 0 -13px;
+
+              }
+            }
+            span{
+              font-weight: 600;
+              color:#503f2d;
+              font-size: 12px;
+
+            }
+            p{
+              display: block;
+              margin-left: 0;
+              color: black;
+              text-transform: none;
+
+            }
+            &.works{
+              label{
+                color: black;
+                text-transform: none;
+                font-weight: normal;
+                letter-spacing: 0;
+
+
+            a{
+              font-size: 12px;
+              color: lighten($main-color, 20%);
+
+            }
+            }
+          }
+          }
+          &.list-experience1{
+
+
+
+            margin:10px;
+            li{
+
+
+              overflow: hidden;
+              &:after{
+                content: '\2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  \2022  ';
+                font-size: 30px;
+                overflow: hidden;
+                white-space: nowrap;
+                font-family: Arial;
+                letter-spacing: -1px;
+
+
+
+              }
+            }
+              }
+            }
+
+          }
+
+
+      //Iconos grandes
+      @include hexagon-icon($hexagon-color: $main-color);
+      //Iconos pequeños
+      @include hexagon-icon($hexagon-color: $main-color, $fill: true, $icon-color: #ffffff, $size: 'small');
+    }
+  }
+}
+
+/*Movil*/
+@media only screen and (max-width: 40em) {
+
+  body{
+    main{
+      .do-toggle{
+        right: 0;
+        margin-top: -20px;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+      }
+      .toggle-title + .info-content{
+        display:none;
+      }
+      .toggle-title{
+        position: relative;
+        margin-bottom: 40px;
+        h3{
+          max-width: 75%;
+        }
+      }
+      #left-side{
+        padding-bottom: 0;
+        .do-toggle{
+          color: white;
+        }
+        .toggle-title:last-of-type{
+          margin-bottom: 0;
+        }
+      }
+      #right-side{
+         padding-top: 35px;
+        .do-toggle{
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+/*iPad*/
+@media only screen and (min-width: 40.063em) and (max-width: 64em){
+  body{
+    main {
+      .info-content{
+        padding: 0 8¡px;
+      }
+      & > section{
+        padding: 52px 18px;
+      }
+    }
+  }
+}
+
+
+.list-skills span{
+  color: white;
+
+  font-size:10px;
+  text-align: justify;
+  margin:0,12;
+}
+
+$filled-star-color: #2f3241;
+$empty-star-color: #c0c1c6;
+$star-size: 25px;
+
+body {
+  background: #ebebeb url('http://i40.tinypic.com/2z3z2b8.png');
+}
+
+.rating {
+    direction: rtl;
+    font-size: $star-size;
+    unicode-bidi: bidi-override;
+    position: relative;
+    span.star {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        &:hover {
+            cursor: pointer;
+        }
+        &:before {
+            color: $empty-star-color;
+            content: "\f006";
+          font-size: 25px;
+    text-shadow: 4px 4px 10px #001d4c;
+        }
+        &:hover:before,
+        &:hover ~ span.star:before {
+            color: $filled-star-color;
+            content: "\f005";
+          font-size: 24px;
+        }
+        &:hover:after {
+            direction: ltr;
+            content: attr(title);
+            position: absolute;
+            left: 0;
+            bottom: -22px;
+            white-space: nowrap;
+            font: normal 14px/normal Arial, Helvetica, sans-serif;
+        }
+    }
+}
+.ratings {
+    margin:5px;
+    width: 5*$star-size;
+    height: $star-size;
+    display: inline-block;
+    position: relative;
+    &:before,
+    &:after{
+      display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      font-size: $star-size;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &:before {
+      color: $empty-star-color;
+      content: "\f006\f006\f006\f006\f006";
+      font-size: 25.5px;
+      margin-left:1px;
+    }
+    &:after {
+      color: $filled-star-color;
+      content: "\f005\f005\f005\f005\f005";
+      overflow: hidden;
+      margin-left:2px;
+
+    }
+}
+
+.ratings.one:after{content: "\f005";}
+.ratings.onehalf:after{content: "\f005\f089";}
+.ratings.two:after{content: "\f005\f005";}
+.ratings.twohalf:after{content: "\f005\f005\f089";}
+.ratings.three:after{content: "\f005\f005\f005";}
+.ratings.threehalf:after{content: "\f005\f005\f005\f089";}
+.ratings.four:after{content: "\f005\f005\f005\f005";}
+.ratings.fourhalf:after{content: "\f005\f005\f005\f005\f089";}
+
+.academic{font-size: 16px;
+              color: $main-color;
+              font-weight: bold;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+}
+
+.info-contentexp{
+  font-size: 16px;
+              color: $main-color;
+              font-weight: bold;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+
+
+}
+
+a { color: inherit; }

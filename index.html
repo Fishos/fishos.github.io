@@ -2,151 +2,328 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/scss" href="style.scss">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/5.5.0/css/foundation.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.3.1/trianglify.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.equalizer.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.4/SmoothScroll.min.js"></script>
   <script src="script.js"></script>
-  <title>Fish' Profile page</title>
+  <title>Olivier Devis' Curriculum Vitae</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <ul class="w3-navbar" id="myNavbar">
-    <li><a href="#" class="w3-padding-large">Olivier</a></li>
-    <li class="w3-hide-small w3-right">
-      <a href="#contact" class="w3-padding-large">Contact</a>
-    </li>
-    <li class="w3-hide-small w3-right">
-      <a href="#portfolio" class="w3-padding-large">Portfolio</a>
-    </li>
-    <li class="w3-hide-small w3-right">
-      <a href="#about" class="w3-padding-large">About</a>
-    </li>
-  </ul>
-</div>
-
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-opacity w3-display-container">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <h1 class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">OLIVIER <span class="w3-hide-small">DEVIS</span></h1>
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h2 class="w3-center">ABOUT ME</h2>
-  <p class="w3-center"><em>I love Programming</em></p>
-  <p>I am Olivier Devis. I am a dreamer whose dream is to build awesome things in the future and to contribute something useful to the world.But hey this website symbolizes that I contribute something in the world.</p>
-  <!--  Profile Picture and Description  -->
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-section">
-      <img src="https://avatars3.githubusercontent.com/u/22887444?s=400&u=1f1d6dcbc2810d080e67f705eed106fed4ade3a5&v=4" id="profile" class="w3-circle" alt="Photo of Me">
-    </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-section">
-      <p>By the help of Leagon I will be a Full Stack Web Developer soon!</p>
-    </div>
-  </div>
-</div>
-
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container" id="portfolio">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64">
-  <h2 class="w3-center">MY WORK</h2>
-  <p class="w3-center"><em>Here are some of my latest lorem work.<br> Click on the images to make them bigger</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/300?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/301?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/302?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/303?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-  </div>
-
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/304?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/305?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/306?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="https://unsplash.it/400/307?random" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-closebtn w3-hover-red w3-text-white w3-xxxlarge w3-container w3-display-topright">×</span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" style="max-width:100%">
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container" id="contact">
-  <div class="w3-display-middle">
-    <h2 class="w3-xxlarge w3-text-grey w3-wide">CONTACT</h2>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64">
-  <h3 class="w3-center">WHERE I WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
-
-  <address class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <!-- Add Google Maps -->
-      <div id="googleMap" class="w3-round-large"></div>
-    </div>
-    <div class="w3-col m8 w3-container w3-section">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker w3-hover-text-black" style="width:30px"></i> Bruxelles, Belgium<br>
-        <i class="fa fa-phone w3-hover-text-black" style="width:30px"></i> Phone: +32 474 42 72 19<br>
-        <i class="fa fa-envelope w3-hover-text-black" style="width:30px"> </i> Email: devis.o@hotmail.com<br>
-      </div>
-      <p>Swing by for a cup of coffee, or leave me a note:</p>
-      <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-        <div class="w3-half">
-          <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Name">
+<main data-equalizer>
+  <section id="left-side" class="large-4 medium-5 small-12 left" data-equalizer-watch>
+    <section class="hexagon-container">
+      <figure class="hexagon hexagon-image">
+        <div class="inner">
+          <img class="retrato" src="https://image.ibb.co/eXqqqe/retrato.png" alt="">
         </div>
-        <div class="w3-half">
-          <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Email">
+      </figure>
+      <figure class="hexagon hexagon-background">
+        <div class="inner">
         </div>
+      </figure>
+      <figure class="hexagon hexagon-background-dark">
+        <div class="inner">
+        </div>
+      </figure>
+    </section>
+    <h2 class="name">Pedro Daniel
+      <br> <strong>Uribe Martínez</strong>
+    </h2>
+    <br>
+    <br>
+    <section class="icon-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-file-text"></i>
       </div>
-      <input class="w3-input w3-border w3-hover-light-grey" type="text" placeholder="Comment">
-      <a href="mailto:christianpecson.io@gmail.com" class="w3-btn w3-section w3-right">SEND</a>
-    </div>
-  </address>
-</div>
+      <h3>Perfil</h3>
+    </section>
+    <section class="info-content">
+      <p class=profilep>
+        <strong>Hola!</strong> <br>
+Soy un apasionado de la tecnología y la ciencia. Dentro de este campo, destaco en la construcción de relaciones uno a uno con clientes.
+
+        <br>
+        <br>Me desarrollo en el campo laboral como una persona analítica, excelente en el desarrollo de soluciones aplicadas en tecnología, con énfasis en el desarrollo de relaciones comerciales personales para lograr objetivos, generar valor y crear confianza.
+
+      </p>
+    </section>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-user"></i>
+      </div>
+      <h3>Contacto</h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-icons">
+        <li>
+          <div class="hexagon-icon-fill-small">
+            <i class="fa fa-map-marker"></i>
+          </div>
+          <p> Manuel Sterling #49
+            <br>Colonia Centro, CDMX
+
+          </p>
+        </li>
+        <li>
+          <div class="hexagon-icon-fill-small">
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+          </div>
+          <p>
+            <a href="tel:5535943359">(+52) 553594-3359 </a>
+          </p>
+        </li>
+        <li>
+          <div class="hexagon-icon-fill-small">
+            <i class="fa fa-at" aria-hidden="true"></i>
+          </div>
+          <p> <a href="mailto:pedrodanielu@gmail.com?subject=Me interesa contactarlo">pedrodanielu@gmail.com</a>
+          </p>
+        </li>
+
+        <li>
+          <div class="hexagon-icon-fill-small">
+            <i class="fa fa-skype"></i>
+          </div>
+          <p> <a href="skype:pedrodanielu.?chat">pedrodanielu</a>
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-language" aria-hidden="true"></i>
+      </div>
+      <h3>Idiomas</h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-skills">
+        <li>Español</li>
+        <span class="ratings five"></span>
+        <li>Inglés</li>
+        <span class="ratings fourhalf"></span>
+      </ul>
+    </section>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+
+      </div>
+      <h3>Software</h3><a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-skills">
+
+         <li>Windows / Mac OSX</li>
+        <span class="ratings five"></span>
+
+        <li>Zendesk CRM Tool</li>
+        <span class="ratings five"></span>
+
+        <li>Web Design</li>
+        <span class="ratings three"></span>
+
+        <li>Photoshop / Lightroom</li>
+        <span class="ratings fourhalf"></span>
+
+        <li>Premiere</li>
+        <span class="ratings fourhalf"></span>
+
+        <li>Pro-Tools</li>
+        <span class="ratings four"></span>
+
+
+        <li>Office</li>
+        <span class="ratings five"></span>
+
+
+      </ul>
+    </section>
+
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-gamepad"></i>
+      </div>
+      <h3>Hobbies</h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-skills">
+        <li>Fotografía</li>
+        <li>Automovilismo</li>
+        <li>Tech & Gadgets</li>
+        <li>Juegos de PC</li>
+        <li>Ciclismo</li>
+      </ul>
+    </section>
+  </section>
+  <section id="right-side" class="large-8 medium-7 small-12 left" data-equalizer-watch>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-briefcase"></i>
+      </div>
+      <h3>Experiencia Profesional </h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-experience1">
+        <li><label><a target="_blank" rel="noopener noreferrer" href="https://www.ttec.com/">Teletech/Dish Network USA <span>/ 2012 - 2013 </span></a></label>
+          <p>
+            <strong>Sales and Tech Support Representative:</strong> Mi principal actividad era el brindar apoyo técnico a clientes, brindar información general para la solución de problemas través de atención telefónica, email y chat con Zendesk para la atención de CRM. Además de  proporcionar valor a la compañía a través de upselling y servicio profesional al cliente. También, contribuí a la capacitación de nuevos empleados e hice "Floor-walking", ayudando a los representantes a mejorar métricas y la satisfacción general del cliente.
+          </p>
+        </li>
+        <li><label><a target="_blank" rel="noopener noreferrer" href="https://www.telvista.com/en">CIIA IT Solutions</a> <span>/ 2013 - 2014 </span></label>
+          <p>
+            <strong>Instalador IT</strong>
+Instalación de redes estructurales para soporte de servicios de TI, que van desde servicios de impresión, telefonía IP, PoE, Camaras CCTV análogas, híbridas e IP, alarmas perimetrales, instalación de racks para redes adminitradas. Así mismo lleve el contacto directo con clientes por lo cuál me aseguraba de la calidad y entrega del servicio, la certificación del correcto funcionamiento y futuros mantenimientos.
+          </p>
+        </li>
+        <li><label><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Disruptiva-Films-2053780514902968/?hc_ref=ARRUi17bUH7_ld0AufUjXXkDtDMxvQWt4phTrcbqvaQAvUdXd2jMx4JehTvPiiGlUA0">CIIA IT Solutions</a><span> / 2014 - 2016 </span></label>
+          <p>
+            <strong> Vendedor Empresarial: </strong> Realicé la labor de venta en las cuentas empresariales de Fortinet, Lenovo y Cisco. Dentro de mis
+responsabilidades estaban las de captar nuevos clientes, dimensionar sus necesidades para aplicar una
+solución benéfica y eficaz. Asimismo, elaboraba cotizaciones y el contacto directo con
+prospectos para cerrar negociaciones. El rango de productos era muy vasto, desde computadoras personales, hasta contratos de servicio administrado en equipos de red y telefonía IP.
+          </p>
+        </li>
+        <li><label><a target="_blank" rel="noopener noreferrer" href="https://www.vidanta.com/">Vidanta Resorts </a><span> / 2016 - 2018 </span></label>
+          <p>
+            <strong>International Sales Executive:</strong>
+Mi objetivo principal era el crear una buena relación entre los diferentes clientes internacionales, demostrar el valor de la empresa, el porque invertir en México y finalmente presentar una solución al cliente, concretando una venta existosamente. Los productos que Vidanta ofrece van desde vacaciones, tiempo compartido
+           y propiedades inmobiliarias alrededor de México.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-trophy" aria-hidden="true"></i>
+      </div>
+      <h3>Formación Académica</h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-experience" >
+        <li>
+          <div class="academic">Preparatoria      <span>/ 2010 - 2013 </span></div>
+          <p>
+            <strong>Escuela Ameyalli, México City |  México</strong>
+          </p>
+        </li>
+<li>
+          <div class="academic">Carrera técnica en Informática     <span>/ 2015 - 2016 </span></div>
+          <p>
+            <strong>Centro Universitario IMEC SEP, México City |  México</strong>
+          </p>
+        </li>
+    </section>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-list-alt" aria-hidden="true"></i>
+      </div>
+      <h3>Diplomados, Cursos y Experiencia</h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-experience">
+        <li><li>
+          <label>Cinta Blanca: HTML, CSS y Fundamentos Java Script  <span>/ 2018<span>
+
+            </label>
+
+          <p>
+            <strong>Dev.f | Diplomado</strong>
+          </p>
+        </li>
+        <li>
+
+        <li>
+          <label>CCNA Routing & Switching Certified  <span>/ 2017<span>
+
+            </label>
+
+          <p>
+            <strong>Cisco | Certificación Online</strong>
+          </p>
+        </li>
+        <li>
+          <label>Foto de Producto y Tecnologías para Marketing Digital <span> / 2014</span></label>
+          <p>
+            <strong>EDUMAC | CDMX | Diplomado</strong>
+          </p>
+        </li>
+        <li><label>Post-Production para Medios Digitales<span> / 2014</span></label>
+          <p>
+            <strong>Arte 7 | CDMX | Diplomado</strong>
+          </p>
+        </li>
+         <label> pBT English <span> / 2008</span></label>
+          <p> <strong> TOEFL | Certification</strong>
+          </p>
+        </li>
+          <li><label>MOS: Microsoft Office Specialist  <span> / 2008</span></label>
+          <p>
+            <strong>Microsoft | Certificación</strong>
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-bullseye"></i>
+      </div>
+      <h3>Habilidades Profesionales</h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+      <ul class="list-experience woks">
+        <li><label>Habilidades para solucionar problemas</label></li>
+        <li><label>Motivación al Servicio al Cliente</label></li>
+       <li><label>Creador de Contenido</label></li>
+        <li><label>Excelentes Habilidades de Comunicación</label</li>
+        <li><label>Digital Marketer</label></li>
+        <li><label>Autodidacta</label></li>
+      </ul>
+    </section>
+    <section class="icon-title toggle-title">
+      <div class="hexagon-icon">
+        <i class="fa fa-male"></i>
+      </div>
+      <h3>Habilidades Personales</h3>
+      <a href="javascript:void(0)" class="do-toggle"><i class="fa fa-chevron-down"></i></a>
+    </section>
+    <section class="info-content">
+        <ul class="list-experience wors">
+        <li><label>Extrovertido</label></li>
+        <li><label>Intuitivo y motivado</label></li>
+        <li><label>Orgranizado </label></li>
+
+        </ul>
+
+          </div>
+        </li>
+      </ul>
+    </section>
+  </section>
+</main>
 </body>
 <!-- Footer -->
 <footer class="w3-center w3-dark-grey w3-padding-48 w3-hover-black cf">
